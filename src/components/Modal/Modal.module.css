@@ -1,0 +1,33 @@
+.modal {
+  display: flex;
+  flex-flow: column wrap;
+  gap: 0px;
+  padding: 24px;
+  /* max-height: 80vh; */
+  border-radius: 24px;
+
+  background: rgba(255, 255, 255, 0.24);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.5px);
+  -webkit-backdrop-filter: blur(6.5px);
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  width: 532px;
+
+  margin: auto;
+}
+
+h1 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 32px;
+}
+
+p {
+  white-space: pre-line;
+  font-size: 14px;
+}
+
+.hidden {
+  display: none;
+}

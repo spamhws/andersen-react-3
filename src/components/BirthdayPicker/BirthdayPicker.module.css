@@ -1,0 +1,42 @@
+label {
+  position: relative;
+}
+
+input[type='date']::-webkit-calendar-picker-indicator {
+  color: rgba(0, 0, 0, 0);
+  opacity: 1;
+  display: flex;
+  position: absolute;
+  width: 25px;
+  transform: translate(-22px, -1px);
+}
+
+input[type='date'] {
+  position: relative;
+  padding-left: 32px;
+  width: auto;
+}
+
+input[type='date'] {
+  color: grey;
+}
+
+.textError {
+  position: relative;
+  right: 8px;
+  bottom: -16px;
+  text-align: right;
+}
+
+input + .textError {
+  position: absolute;
+  bottom: -24px;
+}
+
+.textError {
+  color: red;
+}
+
+.hidden {
+  display: none;
+}

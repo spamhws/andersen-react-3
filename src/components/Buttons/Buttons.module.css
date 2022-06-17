@@ -1,0 +1,37 @@
+.buttons {
+  margin-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.buttons > * {
+  border-radius: 4px;
+  padding: 12px 16px;
+  font-weight: bold;
+  width: 50%;
+  font-size: 14px;
+  line-height: 24px;
+  transition: background-color 0.3s;
+}
+
+.cancel {
+  background-color: transparent;
+  border: 1px solid #2b8cff;
+  color: #2b8cff;
+}
+
+.cancel:hover {
+  background-color: rgb(188, 217, 255);
+}
+
+.save {
+  background: #2b8cff;
+  border-radius: 4px;
+  border: none;
+  color: #ffffff;
+}
+
+.save:hover {
+  background-color: #0073ff;
+}

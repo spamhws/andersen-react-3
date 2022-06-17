@@ -1,25 +1,27 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import Form from './components/Form/Form.js';
+import Modal from './components/Modal/Modal.js';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { displayModal: false };
+    this.updateModal = this.updateModal.bind(this);
+  }
+
+  updateModal(formValues) {
+    this.setState({ values: formValues, displayModal: true });
+  }
+
+  render() {
+    return (
+      <div className='App'>
+        <Form displayModal={this.state.displayModal} updateModal={this.updateModal} />
+        <Modal displayModal={this.state.displayModal} values={this.state.values} />
+      </div>
+    );
+  }
 }
 
 export default App;

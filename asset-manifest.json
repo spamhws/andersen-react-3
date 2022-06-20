@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/andersen-react-3/static/css/main.8de2be35.css",
-    "main.js": "/andersen-react-3/static/js/main.45e4917e.js",
+    "main.js": "/andersen-react-3/static/js/main.bacb8ebf.js",
     "index.html": "/andersen-react-3/index.html",
     "main.8de2be35.css.map": "/andersen-react-3/static/css/main.8de2be35.css.map",
-    "main.45e4917e.js.map": "/andersen-react-3/static/js/main.45e4917e.js.map"
+    "main.bacb8ebf.js.map": "/andersen-react-3/static/js/main.bacb8ebf.js.map"
   },
   "entrypoints": [
     "static/css/main.8de2be35.css",
-    "static/js/main.45e4917e.js"
+    "static/js/main.bacb8ebf.js"
   ]
 }

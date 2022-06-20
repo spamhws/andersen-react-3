@@ -1,44 +1,35 @@
 import React from 'react';
 import styles from './Buttons.module.css';
+import { Link } from 'react-router-dom';
 
-class Buttons extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {};
-  // }
-
-  // componentDidUpdate() {
-  //   console.log(this.state.clicked);
-  // }
-
-  render() {
-    return (
-      <div
-        onClick={(event) => {
-          event.preventDefault();
+export default function Buttons(props) {
+  let finalLink = props.buttonLinksToResult ? '/result' : '';
+  return (
+    <div
+      onClick={(event) => {
+        event.preventDefault();
+      }}
+      className={styles.buttons}
+    >
+      <button
+        onClick={() => {
+          window.location.reload();
+          return false;
         }}
-        className={styles.buttons}
+        className={styles.cancel}
       >
-        <button
-          onClick={() => {
-            window.location.reload();
-            return false;
-          }}
-          className={styles.cancel}
-        >
-          Cancel
-        </button>
-        <button
-          className={styles.save}
-          onClick={(event) => {
-            this.props.onSave();
-          }}
-        >
-          Save
-        </button>
-      </div>
-    );
-  }
-}
+        Cancel
+      </button>
 
-export default Buttons;
+      <Link
+        className={styles.save}
+        onClick={(event) => {
+          props.onSave();
+        }}
+        to={finalLink}
+      >
+        Save
+      </Link>
+    </div>
+  );
+}

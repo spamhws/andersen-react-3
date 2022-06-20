@@ -1,27 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import Form from './components/Form/Form.js';
 import Modal from './components/Modal/Modal.js';
+import { Route, Routes } from 'react-router-dom';
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { displayModal: false };
-    this.updateModal = this.updateModal.bind(this);
+export default function App() {
+  const [state, setState] = useState({ displayModal: false });
+
+  function updateModal(formValues) {
+    setState((prevState) => ({
+      ...prevState,
+      values: formValues,
+      displayModal: true,
+    }));
   }
 
-  updateModal(formValues) {
-    this.setState({ values: formValues, displayModal: true });
-  }
-
-  render() {
-    return (
-      <div className='App'>
-        <Form displayModal={this.state.displayModal} updateModal={this.updateModal} />
-        <Modal displayModal={this.state.displayModal} values={this.state.values} />
-      </div>
-    );
-  }
+  return (
+    <div className='App'>
+      <Routes>
+        <Route exact path='/' element={<Form updateModal={updateModal} />}></Route>
+        <Route exact path='/result' element={<Modal values={state.values} />}></Route>
+      </Routes>
+    </div>
+  );
 }
-
-export default App;
